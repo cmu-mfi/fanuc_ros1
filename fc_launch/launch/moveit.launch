@@ -1,0 +1,37 @@
+<launch>
+
+    <!-- Launch file arguments -->
+    <arg name="namespace" default="/" />
+    <arg name="sim" default="true" />
+
+    <group ns="$(arg namespace)">
+        <param name="tf_prefix" value="$(arg namespace)" />
+
+        <!-- Dummy IP -->
+        <arg name ="fc_ip" value="192.168.99.99" />
+
+        <!-- Launch fc_interface Node -->
+        <node name="fc_interface" pkg="fc_tasks" type="fc_tasks" output="screen" >
+            <param name="group_name" type="str" value="manipulator"/>
+        </node>
+        <!-- launch-prefix="gdb -ex run -/-args" -->
+        
+        <!-- Launch MoveIt -->
+        <include file="$(find fanuc_lrmate200id7l_moveit_config)/launch/moveit_planning_execution.launch" >
+            <arg name="robot_ip" value="$(arg fc_ip)" unless="$(arg sim)"/>
+			<arg name="sim" value="false" unless="$(arg sim)"/>
+            <arg name="namespace" value="$(arg namespace)"/>
+        </include>
+    </group>
+
+</launch> 
+
+<!-- 
+
+
+      <arg name="msg" default="REACHED INSIDE THIS IF STATEMENT " />
+            <node name="pub_text" pkg="rostopic" type="rostopic"
+                args="pub /msg std_msgs/String '$(arg msg)'"
+                output="screen" />
+            <node name="print_text" pkg="rostopic" type="rostopic"
+                args="echo /msg" output="screen" /> -->
