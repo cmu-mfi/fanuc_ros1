@@ -23,6 +23,7 @@ goal.orientation.z = 0.707
 traj.append(goal)
 
 goalSend = ExecuteCartesianTrajectoryGoal()
+goalSend.waypoints = traj
 goalSend.eef_step = 0.01
 goalSend.jump_threshold = 0.0
 goalSend.max_velocity_scaling_factor = 0.3
@@ -32,7 +33,7 @@ goalSend.blend_radius = 0.0
 if __name__ == '__main__':
     rospy.init_node('test_fc_execute_cartesian_trajectory')
 
-    client = actionlib.SimpleActionClient('/sim1/fc_execute_cartsian_trajectory', ExecuteCartesianTrajectoryAction)
+    client = actionlib.SimpleActionClient('/sim1/fc_execute_cartesian_trajectory', ExecuteCartesianTrajectoryAction)
 
     rospy.loginfo("Waiting for action server /sim1/fc_execute_cartesian_trajectory...")
     client.wait_for_server()

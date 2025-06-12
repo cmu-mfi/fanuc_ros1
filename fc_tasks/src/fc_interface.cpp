@@ -6,10 +6,10 @@ FC_Interface::FC_Interface(std::string group_name, ros::NodeHandle &nh_)
     go_to_pose_as_(nh_, "fc_go_to_pose", boost::bind(&FC_Interface::goToPoseCallback, this, _1), false), 
     go_to_pose_async_as_(nh_, "fc_go_to_pose_async", boost::bind(&FC_Interface::goToPoseAsyncCallback, this, _1), false), 
     go_to_joints_as_(nh_, "fc_go_to_joints", boost::bind(&FC_Interface::goToJointsCallback, this, _1), false),
-    execute_cartesian_trajectory_as_(nh_, "fc_execute_cartsian_trajectory", boost::bind(&FC_Interface::executeCartesianTrajectoryCallback, this, _1), false)
+    execute_cartesian_trajectory_as_(nh_, "fc_execute_cartesian_trajectory_action", boost::bind(&FC_Interface::executeCartesianTrajectoryCallback, this, _1), false)
 {
-	ROS_INFO_STREAM("planning frame.." << move_group_.getPlanningFrame());
-	ROS_INFO_STREAM("pose reference frame.." << move_group_.getPoseReferenceFrame());
+	ROS_INFO_STREAM("Planning frame.." << move_group_.getPlanningFrame());
+	ROS_INFO_STREAM("Pose reference frame.." << move_group_.getPoseReferenceFrame());
 	ROS_INFO_STREAM("End Effector.." << move_group_.getEndEffector());
 	ROS_INFO_STREAM("End Effector Link.." << move_group_.getEndEffectorLink());
 
@@ -40,7 +40,6 @@ FC_Interface::FC_Interface(std::string group_name, ros::NodeHandle &nh_)
 
     //SERVICE SERVERS
 	getPose_server_ = nh_.advertiseService("fc_get_pose", &FC_Interface::getPose, this);
-	// getPoseStamped_server_ = nh_.advertiseService("fc_get_pose_stamped", &FC_Interface::getPoseStamped, this);
 	setJoints_server_ = nh_.advertiseService("fc_set_joints", &FC_Interface::setJoints, this);
 	setPose_server_ = nh_.advertiseService("fc_set_pose", &FC_Interface::setPose, this);
 	executeTrajectory_server_ = nh_.advertiseService("fc_execute_trajectory", &FC_Interface::executeTrajectory, this);
@@ -78,7 +77,6 @@ bool FC_Interface::setPose(fc_msgs::SetPose::Request &req, fc_msgs::SetPose::Res
 
 	return success;
 }
-/** TODO: change the infinite loop here*/
 bool FC_Interface::setJoints(fc_msgs::SetJoints::Request &req, fc_msgs::SetJoints::Response &res){
 
 	ros::AsyncSpinner async_spinner(1);
@@ -341,7 +339,7 @@ void FC_Interface::checkMoving(const sensor_msgs::JointState::ConstPtr &msg){
 	for (int i=0; i<size; i++){
 		velocity_sum += abs(msg->velocity[i]);
 	}
-	if (velocity_sum > 0.05){ /** TODO: Configure this value */
+	if (velocity_sum > 0.05){
 		is_moving_ = true;
 	}
 	else{

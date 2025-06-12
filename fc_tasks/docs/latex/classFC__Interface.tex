@@ -1,0 +1,960 @@
+\hypertarget{classFC__Interface}{}\doxysection{FC\+\_\+\+Interface Class Reference}
+\label{classFC__Interface}\index{FC\_Interface@{FC\_Interface}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFC__Interface_a93061c8193ef5965dab84dee7713db3d}{FC\+\_\+\+Interface}} (std\+::string group\+\_\+name, ros\+::\+Node\+Handle \&nh\+\_\+)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classFC__Interface}{FC\+\_\+\+Interface}} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_ad6d2863ddbafff5e665df4d5d6a9259f}{get\+Pose}} (fc\+\_\+msgs\+::\+Get\+Pose\+::\+Request \&req, fc\+\_\+msgs\+::\+Get\+Pose\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+get\+\_\+pose\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_af7ba1c6a58a67b145a7489c91b50224d}{set\+Pose}} (fc\+\_\+msgs\+::\+Set\+Pose\+::\+Request \&req, fc\+\_\+msgs\+::\+Set\+Pose\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+set\+\_\+pose\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_a9aad6d309b2387f0467fdb809e6d9650}{set\+Joints}} (fc\+\_\+msgs\+::\+Set\+Joints\+::\+Request \&req, fc\+\_\+msgs\+::\+Set\+Joints\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+set\+\_\+joints\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_a4fd1d178f395826f7ab7e8f9c1cc6383}{execute\+Trajectory}} (moveit\+\_\+msgs\+::\+Execute\+Known\+Trajectory\+::\+Request \&req, moveit\+\_\+msgs\+::\+Execute\+Known\+Trajectory\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+trajectory\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_aca700d220402724738cb804d10dedaad}{stop\+Trajectory}} (std\+\_\+srvs\+::\+Trigger\+::\+Request \&req, std\+\_\+srvs\+::\+Trigger\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+stop\+\_\+trajectory\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_a7e73fa2e4481c51ab8cf50db8ed237fd}{execute\+Cartesian\+Trajectory}} (fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Request \&req, fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+cartesian\+\_\+trajectory\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFC__Interface_a98c270fa4f58f0d52d28882c100ff311}{execute\+Cartesian\+Trajectory\+Async}} (fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Request \&req, fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+cartesian\+\_\+trajectory\+\_\+async\textquotesingle{} ROS service. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFC__Interface_aaa9f5796cbf86cd29d14829405cb354e}{go\+To\+Joints\+Callback}} (const fc\+\_\+msgs\+::\+Go\+To\+Joints\+Goal\+Const\+Ptr \&goal)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+go\+\_\+to\+\_\+joints\textquotesingle{} action server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFC__Interface_ad53a7b9e850c889f27b77e68d0e37d13}{go\+To\+Pose\+Callback}} (const fc\+\_\+msgs\+::\+Go\+To\+Pose\+Goal\+Const\+Ptr \&goal)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+go\+\_\+to\+\_\+pose\textquotesingle{} action server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFC__Interface_a8b7f56258f537e276dc270fcb53eed28}{go\+To\+Pose\+Async\+Callback}} (const fc\+\_\+msgs\+::\+Go\+To\+Pose\+Goal\+Const\+Ptr \&goal)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+go\+\_\+to\+\_\+pose\+\_\+async\textquotesingle{} action server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFC__Interface_ac0a035a7428ac1b6adf37e2e3e8fe189}{execute\+Cartesian\+Trajectory\+Callback}} (const fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+Goal\+Const\+Ptr \&goal)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+cartesian\+\_\+trajectory\textquotesingle{} action server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFC__Interface_a3ef243f0c04054e36d6ef15116e97f82}{joint\+States\+Callback}} (const sensor\+\_\+msgs\+::\+Joint\+State\+::\+Const\+Ptr \&msg)
+\begin{DoxyCompactList}\small\item\em Callback function for the \textquotesingle{}/joint\+\_\+states\textquotesingle{} topic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFC__Interface_aa814ee4c80d05e418d07c61274dd5dcc}{check\+Moving}} (const sensor\+\_\+msgs\+::\+Joint\+State\+::\+Const\+Ptr \&msg)
+\item 
+\mbox{\Hypertarget{classFC__Interface_a129b0cc0856c897596d5ecbfcbece5cd}\label{classFC__Interface_a129b0cc0856c897596d5ecbfcbece5cd}} 
+void {\bfseries check\+Traj\+Status} (const actionlib\+\_\+msgs\+::\+Goal\+Status\+Array\+::\+Const\+Ptr \&msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 51 of file fc\+\_\+interface.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFC__Interface_a93061c8193ef5965dab84dee7713db3d}\label{classFC__Interface_a93061c8193ef5965dab84dee7713db3d}} 
+\index{FC\_Interface@{FC\_Interface}!FC\_Interface@{FC\_Interface}}
+\index{FC\_Interface@{FC\_Interface}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{FC\_Interface()}{FC\_Interface()}}
+{\footnotesize\ttfamily FC\+\_\+\+Interface\+::\+FC\+\_\+\+Interface (\begin{DoxyParamCaption}\item[{std\+::string}]{group\+\_\+name,  }\item[{ros\+::\+Node\+Handle \&}]{nh\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classFC__Interface}{FC\+\_\+\+Interface}} class. 
+
+Initializes the Move\+It! Move\+Group interface and sets up all relevant ROS interfaces including action servers, service servers, and topic subscribers for controlling a robotic manipulator.
+
+
+\begin{DoxyParams}{Parameters}
+{\em group\+\_\+name} & Name of the Move\+It! planning group to be used. \\
+\hline
+{\em hn\+\_\+} & Reference to the ROS node handle for setting up communication.\\
+\hline
+\end{DoxyParams}
+The constructor performs the following\+:
+\begin{DoxyItemize}
+\item Initializes Move\+Group with the given planning group.
+\item Sets up action servers for pose, joint, and Cartesian trajectory goals.
+\item Sets default velocity and acceleration scaling factors.
+\item Starts action servers.
+\item Subscribes to joint state and trajectory status topics for feedback monitoring.
+\item Advertises multiple ROS service servers for motion control.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+The Move\+Group\+Interface\textquotesingle{}s planning frame, pose reference frame, and end-\/effector link are logged for debugging purposes. 
+\end{DoxyNote}
+
+
+Definition at line 4 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5     : move\_group\_(group\_name), }
+\DoxyCodeLine{6     go\_to\_pose\_as\_(nh\_, \textcolor{stringliteral}{"{}fc\_go\_to\_pose"{}}, boost::bind(\&\mbox{\hyperlink{classFC__Interface_ad53a7b9e850c889f27b77e68d0e37d13}{FC\_Interface::goToPoseCallback}}, \textcolor{keyword}{this}, \_1), \textcolor{keyword}{false}), }
+\DoxyCodeLine{7     go\_to\_pose\_async\_as\_(nh\_, \textcolor{stringliteral}{"{}fc\_go\_to\_pose\_async"{}}, boost::bind(\&\mbox{\hyperlink{classFC__Interface_a8b7f56258f537e276dc270fcb53eed28}{FC\_Interface::goToPoseAsyncCallback}}, \textcolor{keyword}{this}, \_1), \textcolor{keyword}{false}), }
+\DoxyCodeLine{8     go\_to\_joints\_as\_(nh\_, \textcolor{stringliteral}{"{}fc\_go\_to\_joints"{}}, boost::bind(\&\mbox{\hyperlink{classFC__Interface_aaa9f5796cbf86cd29d14829405cb354e}{FC\_Interface::goToJointsCallback}}, \textcolor{keyword}{this}, \_1), \textcolor{keyword}{false}),}
+\DoxyCodeLine{9     execute\_cartesian\_trajectory\_as\_(nh\_, \textcolor{stringliteral}{"{}fc\_execute\_cartesian\_trajectory\_action"{}}, boost::bind(\&\mbox{\hyperlink{classFC__Interface_ac0a035a7428ac1b6adf37e2e3e8fe189}{FC\_Interface::executeCartesianTrajectoryCallback}}, \textcolor{keyword}{this}, \_1), \textcolor{keyword}{false})}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     ROS\_INFO\_STREAM(\textcolor{stringliteral}{"{}Planning frame.."{}} << move\_group\_.getPlanningFrame());}
+\DoxyCodeLine{12     ROS\_INFO\_STREAM(\textcolor{stringliteral}{"{}Pose reference frame.."{}} << move\_group\_.getPoseReferenceFrame());}
+\DoxyCodeLine{13     ROS\_INFO\_STREAM(\textcolor{stringliteral}{"{}End Effector.."{}} << move\_group\_.getEndEffector());}
+\DoxyCodeLine{14     ROS\_INFO\_STREAM(\textcolor{stringliteral}{"{}End Effector Link.."{}} << move\_group\_.getEndEffectorLink());}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     max\_velocity\_scaling\_factor\_ = 0.1;}
+\DoxyCodeLine{17     max\_acceleration\_scaling\_factor\_ = 0.1;}
+\DoxyCodeLine{18     move\_group\_.setMaxAccelerationScalingFactor(max\_acceleration\_scaling\_factor\_);}
+\DoxyCodeLine{19     move\_group\_.setMaxVelocityScalingFactor(max\_velocity\_scaling\_factor\_);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{comment}{//READ CONFIG FILES (TODO: change to include everything)}}
+\DoxyCodeLine{22     std::string current\_dir = ros::package::getPath(\textcolor{stringliteral}{"{}fc\_tasks"{}}); }
+\DoxyCodeLine{23     std::string robot\_config\_file = current\_dir + \textcolor{stringliteral}{"{}/config/lr200iD7L.json"{}};}
+\DoxyCodeLine{24     robot\_DH\_ = loadFromFile\_(robot\_config\_file, \textcolor{stringliteral}{"{}DH"{}}); }
+\DoxyCodeLine{25     robot\_base\_frame\_ = loadFromFile\_(robot\_config\_file, \textcolor{stringliteral}{"{}base"{}}); }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{comment}{//START ACTION SERVERS}}
+\DoxyCodeLine{28     go\_to\_pose\_as\_.start();}
+\DoxyCodeLine{29     go\_to\_pose\_async\_as\_.start();}
+\DoxyCodeLine{30     go\_to\_joints\_as\_.start();}
+\DoxyCodeLine{31     execute\_cartesian\_trajectory\_as\_.start();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{//ROSTOPIC SUBSCRIBERS}}
+\DoxyCodeLine{34     check\_moving\_sub\_ = nh\_.subscribe(\textcolor{stringliteral}{"{}check\_moving"{}}, 1, \&\mbox{\hyperlink{classFC__Interface_aa814ee4c80d05e418d07c61274dd5dcc}{FC\_Interface::checkMoving}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{35     trajectory\_status\_sub\_ = nh\_.subscribe(\textcolor{stringliteral}{"{}execute\_trajectory/status"{}}, 1, \&FC\_Interface::checkTrajStatus, \textcolor{keyword}{this});}
+\DoxyCodeLine{36     joint\_states\_sub\_ = nh\_.subscribe(\textcolor{stringliteral}{"{}joint\_states"{}}, 1, \&\mbox{\hyperlink{classFC__Interface_a3ef243f0c04054e36d6ef15116e97f82}{FC\_Interface::jointStatesCallback}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//ROSTOPIC PUBLISHERS }}
+\DoxyCodeLine{39     tool0\_pose\_pub\_ = nh\_.advertise<geometry\_msgs::PoseStamped>(\textcolor{stringliteral}{"{}tool0\_pose"{}}, 1);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//SERVICE SERVERS}}
+\DoxyCodeLine{42     getPose\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_get\_pose"{}}, \&\mbox{\hyperlink{classFC__Interface_ad6d2863ddbafff5e665df4d5d6a9259f}{FC\_Interface::getPose}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{43     setJoints\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_set\_joints"{}}, \&\mbox{\hyperlink{classFC__Interface_a9aad6d309b2387f0467fdb809e6d9650}{FC\_Interface::setJoints}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{44     setPose\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_set\_pose"{}}, \&\mbox{\hyperlink{classFC__Interface_af7ba1c6a58a67b145a7489c91b50224d}{FC\_Interface::setPose}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{45     executeTrajectory\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_execute\_trajectory"{}}, \&\mbox{\hyperlink{classFC__Interface_a4fd1d178f395826f7ab7e8f9c1cc6383}{FC\_Interface::executeTrajectory}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{46     stopTrajectory\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_stop\_trajectory"{}}, \&\mbox{\hyperlink{classFC__Interface_aca700d220402724738cb804d10dedaad}{FC\_Interface::stopTrajectory}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{47     executeCartesianTraj\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_execute\_cartesian\_trajectory"{}}, \&\mbox{\hyperlink{classFC__Interface_a7e73fa2e4481c51ab8cf50db8ed237fd}{FC\_Interface::executeCartesianTrajectory}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{48     executeCartesianTrajAsync\_server\_ = nh\_.advertiseService(\textcolor{stringliteral}{"{}fc\_execute\_cartesian\_trajectory\_async"{}}, \&\mbox{\hyperlink{classFC__Interface_a7e73fa2e4481c51ab8cf50db8ed237fd}{FC\_Interface::executeCartesianTrajectory}}, \textcolor{keyword}{this});}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFC__Interface_aa814ee4c80d05e418d07c61274dd5dcc}\label{classFC__Interface_aa814ee4c80d05e418d07c61274dd5dcc}} 
+\index{FC\_Interface@{FC\_Interface}!checkMoving@{checkMoving}}
+\index{checkMoving@{checkMoving}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{checkMoving()}{checkMoving()}}
+{\footnotesize\ttfamily void FC\+\_\+\+Interface\+::check\+Moving (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Joint\+State\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+Helper Functions 
+
+Definition at line 335 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{335                                                                       \{}
+\DoxyCodeLine{336     \textcolor{keywordtype}{int} size = msg-\/>velocity.size();}
+\DoxyCodeLine{337     \textcolor{keywordtype}{double} velocity\_sum = 0;}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<size; i++)\{}
+\DoxyCodeLine{340         velocity\_sum += abs(msg-\/>velocity[i]);}
+\DoxyCodeLine{341     \}}
+\DoxyCodeLine{342     \textcolor{keywordflow}{if} (velocity\_sum > 0.05)\{}
+\DoxyCodeLine{343         is\_moving\_ = \textcolor{keyword}{true};}
+\DoxyCodeLine{344     \}}
+\DoxyCodeLine{345     \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{346         is\_moving\_ = \textcolor{keyword}{false};}
+\DoxyCodeLine{347     \}}
+\DoxyCodeLine{348 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_a7e73fa2e4481c51ab8cf50db8ed237fd}\label{classFC__Interface_a7e73fa2e4481c51ab8cf50db8ed237fd}} 
+\index{FC\_Interface@{FC\_Interface}!executeCartesianTrajectory@{executeCartesianTrajectory}}
+\index{executeCartesianTrajectory@{executeCartesianTrajectory}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{executeCartesianTrajectory()}{executeCartesianTrajectory()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::execute\+Cartesian\+Trajectory (\begin{DoxyParamCaption}\item[{fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Request \&}]{req,  }\item[{fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+cartesian\+\_\+trajectory\textquotesingle{} ROS service. 
+
+Executes a Cartesian path through a series of waypoints using Move\+It!\textquotesingle{}s planning interface. The path is interpolated based on the specified end-\/effector step size and jump threshold.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request containing\+:
+\begin{DoxyItemize}
+\item req.\+poses\+: Sequence of geometry\+\_\+msgs\+::\+Pose waypoints to follow.
+\item req.\+eef\+\_\+step\+: Resolution of interpolation in meters along the Cartesian path.
+\item req.\+jump\+\_\+threshold\+: Jump detection threshold for joint space discontinuities.
+\item req.\+max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Optional scaling factor for velocity (range 0.\+0–1.0).
+\item req.\+max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Optional scaling factor for acceleration (range 0.\+0–1.0).
+\item req.\+blend\+\_\+radius\+: Optional radius for blending waypoints (if supported).
+\end{DoxyItemize}\\
+\hline
+{\em res} & Service response containing\+:
+\begin{DoxyItemize}
+\item res.\+pose\+: The final end-\/effector pose after executing the Cartesian trajectory.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the Cartesian path was successfully planned and executed; false otherwise.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If planning fails due to unreachable waypoints or joint limits, the function returns false. 
+\end{DoxyWarning}
+
+
+Definition at line 150 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{150                                                                                                                                           \{}
+\DoxyCodeLine{151     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{152     async\_spinner.start();}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     ROS\_DEBUG\_STREAM( \textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{155     ROS\_DEBUG\_STREAM( \textcolor{stringliteral}{"{}Number of waypoints: "{}} << req.poses.size());}
+\DoxyCodeLine{156     }
+\DoxyCodeLine{157     \textcolor{keywordtype}{bool} success = planAndExecuteCartesianPath\_(req.poses, req.eef\_step, req.jump\_threshold, }
+\DoxyCodeLine{158                                                 req.max\_velocity\_scaling\_factor, req.max\_acceleration\_scaling\_factor,}
+\DoxyCodeLine{159                                                 req.blend\_radius, \textcolor{keyword}{false});}
+\DoxyCodeLine{160     }
+\DoxyCodeLine{161     res.pose = move\_group\_.getCurrentPose().pose;}
+\DoxyCodeLine{162     ROS\_DEBUG\_STREAM(res.pose);}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     async\_spinner.stop();}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \textcolor{keywordflow}{return} success; }
+\DoxyCodeLine{167 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_a98c270fa4f58f0d52d28882c100ff311}\label{classFC__Interface_a98c270fa4f58f0d52d28882c100ff311}} 
+\index{FC\_Interface@{FC\_Interface}!executeCartesianTrajectoryAsync@{executeCartesianTrajectoryAsync}}
+\index{executeCartesianTrajectoryAsync@{executeCartesianTrajectoryAsync}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{executeCartesianTrajectoryAsync()}{executeCartesianTrajectoryAsync()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::execute\+Cartesian\+Trajectory\+Async (\begin{DoxyParamCaption}\item[{fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Request \&}]{req,  }\item[{fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+cartesian\+\_\+trajectory\+\_\+async\textquotesingle{} ROS service. 
+
+Executes a Cartesian path asynchronously through a series of end-\/effector waypoints using Move\+It!. This is similar to {\ttfamily execute\+Cartesian\+Trajectory}, but it does {\bfseries{not block}} until the full trajectory is complete.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request containing\+:
+\begin{DoxyItemize}
+\item req.\+poses\+: A sequence of Cartesian waypoints (geometry\+\_\+msgs\+::\+Pose) to follow.
+\item req.\+eef\+\_\+step\+: Interpolation resolution in meters along the Cartesian path.
+\item req.\+jump\+\_\+threshold\+: Threshold for detecting large joint-\/space jumps.
+\item req.\+max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Optional scaling factor for motion velocity (range 0.\+0–1.0).
+\item req.\+max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Optional scaling factor for motion acceleration (range 0.\+0–1.0).
+\item req.\+blend\+\_\+radius\+: Radius for blending between waypoints (if supported).
+\end{DoxyItemize}\\
+\hline
+{\em res} & Service response containing\+:
+\begin{DoxyItemize}
+\item res.\+pose\+: The actual end-\/effector pose after initiating trajectory execution.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the Cartesian trajectory was successfully planned and execution was started; false otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{169                                                                                                                                                \{}
+\DoxyCodeLine{170     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{171     async\_spinner.start();}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173     ROS\_DEBUG\_STREAM( \textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{174     ROS\_DEBUG\_STREAM( \textcolor{stringliteral}{"{}Number of waypoints: "{}} << req.poses.size());}
+\DoxyCodeLine{175     }
+\DoxyCodeLine{176     \textcolor{keywordtype}{bool} success = planAndExecuteCartesianPath\_(req.poses, req.eef\_step, req.jump\_threshold, }
+\DoxyCodeLine{177                                                 req.max\_velocity\_scaling\_factor, req.max\_acceleration\_scaling\_factor,}
+\DoxyCodeLine{178                                                 req.blend\_radius, \textcolor{keyword}{true});}
+\DoxyCodeLine{179     }
+\DoxyCodeLine{180     res.pose = move\_group\_.getCurrentPose().pose;}
+\DoxyCodeLine{181     ROS\_DEBUG\_STREAM(res.pose);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     async\_spinner.stop();}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{keywordflow}{return} success; }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_ac0a035a7428ac1b6adf37e2e3e8fe189}\label{classFC__Interface_ac0a035a7428ac1b6adf37e2e3e8fe189}} 
+\index{FC\_Interface@{FC\_Interface}!executeCartesianTrajectoryCallback@{executeCartesianTrajectoryCallback}}
+\index{executeCartesianTrajectoryCallback@{executeCartesianTrajectoryCallback}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{executeCartesianTrajectoryCallback()}{executeCartesianTrajectoryCallback()}}
+{\footnotesize\ttfamily void FC\+\_\+\+Interface\+::execute\+Cartesian\+Trajectory\+Callback (\begin{DoxyParamCaption}\item[{const fc\+\_\+msgs\+::\+Execute\+Cartesian\+Trajectory\+Goal\+Const\+Ptr \&}]{goal }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+cartesian\+\_\+trajectory\textquotesingle{} action server. 
+
+This action executes a Cartesian trajectory defined by a sequence of waypoints. It provides real-\/time feedback on the progress of waypoint tracking, including percentage completion and currently reached waypoint ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & A shared pointer to the action goal containing\+:
+\begin{DoxyItemize}
+\item goal-\/$>$waypoints\+: A list of geometry\+\_\+msgs\+::\+Pose targets for the end-\/effector to follow.
+\item goal-\/$>$eef\+\_\+step\+: Resolution of interpolation in meters between waypoints.
+\item goal-\/$>$jump\+\_\+threshold\+: Threshold for joint-\/space discontinuity detection.
+\item goal-\/$>$max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Optional velocity scaling factor (range\+: 0.\+0–1.0).
+\item goal-\/$>$max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Optional acceleration scaling factor (range\+: 0.\+0–1.0).
+\item goal-\/$>$blend\+\_\+radius\+: Radius to apply for smoothing transitions between waypoints (if supported).
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item Internally uses {\ttfamily plan\+And\+Execute\+Cartesian\+Path\+\_\+()} with {\ttfamily async=true}.
+\item Publishes {\ttfamily feedback} including\+:
+\begin{DoxyItemize}
+\item {\ttfamily feedback}\+: A string status message.
+\item {\ttfamily wp\+\_\+id}\+: Index of the last reached waypoint.
+\item {\ttfamily wp\+\_\+pct}\+: Percentage of waypoints reached.
+\end{DoxyItemize}
+\item Uses {\ttfamily calculate\+Pose\+Error\+\_\+()} to determine when the robot has reached the next waypoint.
+\item Automatically handles preemption requests and aborts gracefully if preempted or ROS is shutting down.
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+None. The result is returned via the action server using {\ttfamily set\+Succeeded()} or {\ttfamily set\+Preempted()}. 
+\end{DoxyReturn}
+TODO\+: create config file for all magic numbers
+
+Definition at line 287 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{287                                                                                                                \{}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{290     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}New Trajectory to End Waypoint: "{}} << goal-\/>waypoints[1]);}
+\DoxyCodeLine{291     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Number of waypoints: "{}} << goal-\/>waypoints.size());}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     execute\_cartesian\_trajectory\_feedback\_.feedback = \textcolor{stringliteral}{"{}Planning Cartesian Trajectory"{}};}
+\DoxyCodeLine{294     execute\_cartesian\_trajectory\_feedback\_.wp\_pct = 0.0;}
+\DoxyCodeLine{295     execute\_cartesian\_trajectory\_feedback\_.wp\_id = 0;}
+\DoxyCodeLine{296     execute\_cartesian\_trajectory\_as\_.publishFeedback(execute\_cartesian\_trajectory\_feedback\_);}
+\DoxyCodeLine{297     }
+\DoxyCodeLine{298     planAndExecuteCartesianPath\_(goal-\/>waypoints, goal-\/>eef\_step, goal-\/>jump\_threshold, }
+\DoxyCodeLine{299                                 goal-\/>max\_velocity\_scaling\_factor, goal-\/>max\_acceleration\_scaling\_factor,}
+\DoxyCodeLine{300                                 goal-\/>blend\_radius, \textcolor{keyword}{true});}
+\DoxyCodeLine{301     \textcolor{comment}{//******************************************************************}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303     \textcolor{keywordflow}{while}(execute\_cartesian\_trajectory\_feedback\_.wp\_id < goal-\/>waypoints.size()-\/1)}
+\DoxyCodeLine{304     \{}
+\DoxyCodeLine{305         \textcolor{keywordflow}{if}(execute\_cartesian\_trajectory\_as\_.isPreemptRequested() || !ros::ok())}
+\DoxyCodeLine{306         \{}
+\DoxyCodeLine{307             execute\_cartesian\_trajectory\_feedback\_.feedback = \textcolor{stringliteral}{"{}Preempted"{}};}
+\DoxyCodeLine{308             execute\_cartesian\_trajectory\_as\_.publishFeedback(execute\_cartesian\_trajectory\_feedback\_);}
+\DoxyCodeLine{309             execute\_cartesian\_trajectory\_as\_.setPreempted(execute\_cartesian\_trajectory\_result\_);}
+\DoxyCodeLine{310             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{311         \}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313         \textcolor{keywordtype}{int} next\_wp\_id = execute\_cartesian\_trajectory\_feedback\_.wp\_id + 1;}
+\DoxyCodeLine{314         geometry\_msgs::Pose next\_wp = goal-\/>waypoints[next\_wp\_id];}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316         \textcolor{keywordtype}{double} position\_error, orientation\_error;}
+\DoxyCodeLine{317         calculatePoseError\_(move\_group\_.getCurrentPose().pose, next\_wp, position\_error, orientation\_error);}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{320         \textcolor{keywordtype}{float} pos\_tolerance = 0.001;}
+\DoxyCodeLine{321         \textcolor{keywordtype}{float} orient\_tolerance = 0.01;}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323         \textcolor{keywordflow}{if} (position\_error < pos\_tolerance || orientation\_error < orient\_tolerance)}
+\DoxyCodeLine{324         \{}
+\DoxyCodeLine{325             execute\_cartesian\_trajectory\_feedback\_.feedback = \textcolor{stringliteral}{"{}Waypoint reached: "{}} + std::to\_string(next\_wp\_id);}
+\DoxyCodeLine{326             execute\_cartesian\_trajectory\_feedback\_.wp\_id = next\_wp\_id;}
+\DoxyCodeLine{327         \}}
+\DoxyCodeLine{328         }
+\DoxyCodeLine{329         execute\_cartesian\_trajectory\_feedback\_.wp\_pct = }
+\DoxyCodeLine{330             (float)execute\_cartesian\_trajectory\_feedback\_.wp\_id/(\textcolor{keywordtype}{float})goal-\/>waypoints.size();}
+\DoxyCodeLine{331     }
+\DoxyCodeLine{332         execute\_cartesian\_trajectory\_as\_.publishFeedback(execute\_cartesian\_trajectory\_feedback\_);}
+\DoxyCodeLine{333     \}}
+\DoxyCodeLine{334 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_a4fd1d178f395826f7ab7e8f9c1cc6383}\label{classFC__Interface_a4fd1d178f395826f7ab7e8f9c1cc6383}} 
+\index{FC\_Interface@{FC\_Interface}!executeTrajectory@{executeTrajectory}}
+\index{executeTrajectory@{executeTrajectory}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{executeTrajectory()}{executeTrajectory()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::execute\+Trajectory (\begin{DoxyParamCaption}\item[{moveit\+\_\+msgs\+::\+Execute\+Known\+Trajectory\+::\+Request \&}]{req,  }\item[{moveit\+\_\+msgs\+::\+Execute\+Known\+Trajectory\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+execute\+\_\+trajectory\textquotesingle{} ROS service. 
+
+Executes a precomputed trajectory provided in the request using Move\+It!\textquotesingle{}s Move\+Group interface. This is useful for executing trajectories planned and returned earlier by a planner.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request containing\+:
+\begin{DoxyItemize}
+\item req.\+trajectory\+: A full robot trajectory (moveit\+\_\+msgs\+::\+Robot\+Trajectory) to execute.
+\end{DoxyItemize}\\
+\hline
+{\em res} & Service response containing\+:
+\begin{DoxyItemize}
+\item res.\+error\+\_\+code\+: The result of the execution (moveit\+\_\+msgs\+::\+Move\+It\+Error\+Codes).
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the request was handled (even if execution failed); false if the service itself failed.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The following steps are performed\+:
+\begin{DoxyItemize}
+\item Stops any ongoing execution with {\ttfamily move\+\_\+group\+\_\+.\+stop()}.
+\item Loads the provided trajectory into a Plan object.
+\item Executes the trajectory using {\ttfamily move\+\_\+group\+\_\+.\+execute()}.
+\item The error code is returned in the response regardless of success or failure.
+\end{DoxyItemize}
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+This function returns {\ttfamily true} even if execution fails, to indicate the service completed. You must check {\ttfamily res.\+error\+\_\+code} to determine if the trajectory was successfully executed. 
+\end{DoxyWarning}
+
+
+Definition at line 116 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116                                                                                                                                  \{}
+\DoxyCodeLine{117     }
+\DoxyCodeLine{118     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{119     async\_spinner.start();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     move\_group\_.stop();}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     moveit::planning\_interface::MoveGroupInterface::Plan plan;}
+\DoxyCodeLine{124     plan.trajectory\_ = req.trajectory;}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126     moveit\_msgs::MoveItErrorCodes ret\_val = move\_group\_.execute(plan);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     res.error\_code = ret\_val;}
+\DoxyCodeLine{129     \textcolor{keywordflow}{if} (ret\_val.val != moveit\_msgs::MoveItErrorCodes::SUCCESS)}
+\DoxyCodeLine{130     \{}
+\DoxyCodeLine{131         ROS\_ERROR\_STREAM(\textcolor{stringliteral}{"{}Move failed due to ERROR CODE="{}} << res.error\_code);}
+\DoxyCodeLine{132         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{133     \}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135     async\_spinner.stop();}
+\DoxyCodeLine{136     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{137 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_ad6d2863ddbafff5e665df4d5d6a9259f}\label{classFC__Interface_ad6d2863ddbafff5e665df4d5d6a9259f}} 
+\index{FC\_Interface@{FC\_Interface}!getPose@{getPose}}
+\index{getPose@{getPose}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{getPose()}{getPose()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::get\+Pose (\begin{DoxyParamCaption}\item[{fc\+\_\+msgs\+::\+Get\+Pose\+::\+Request \&}]{req,  }\item[{fc\+\_\+msgs\+::\+Get\+Pose\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+get\+\_\+pose\textquotesingle{} ROS service. 
+
+This service retrieves the current end-\/effector pose of the manipulator in the Move\+It! planning scene. It responds with the pose expressed in the reference frame used by the Move\+Group interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Request message (unused; included for compatibility with service definition). \\
+\hline
+{\em res} & Response message that contains the current pose (geometry\+\_\+msgs\+::\+Pose) of the manipulator. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the pose was successfully retrieved and assigned to the response.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+An Async\+Spinner is used here to ensure proper ROS callback handling during blocking operations. 
+\end{DoxyNote}
+
+
+Definition at line 51 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{51                                                                                  \{}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{54     async\_spinner.start();}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     res.pose = move\_group\_.getCurrentPose().pose;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     async\_spinner.stop();}
+\DoxyCodeLine{59     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{60 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_aaa9f5796cbf86cd29d14829405cb354e}\label{classFC__Interface_aaa9f5796cbf86cd29d14829405cb354e}} 
+\index{FC\_Interface@{FC\_Interface}!goToJointsCallback@{goToJointsCallback}}
+\index{goToJointsCallback@{goToJointsCallback}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{goToJointsCallback()}{goToJointsCallback()}}
+{\footnotesize\ttfamily void FC\+\_\+\+Interface\+::go\+To\+Joints\+Callback (\begin{DoxyParamCaption}\item[{const fc\+\_\+msgs\+::\+Go\+To\+Joints\+Goal\+Const\+Ptr \&}]{goal }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+go\+\_\+to\+\_\+joints\textquotesingle{} action server. 
+
+This action moves the manipulator to a target joint configuration provided in the goal message. It uses Move\+It!\textquotesingle{}s Move\+Group interface to plan and execute the motion using the Bi\+TRRT planner. Feedback is published during execution, and the final joint state is returned in the result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & A shared pointer to the action goal containing\+:
+\begin{DoxyItemize}
+\item goal-\/$>$state\+: Target joint configuration (sensor\+\_\+msgs\+::\+Joint\+State).
+\item goal-\/$>$max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Scaling factor for motion velocity (0.\+0 to 1.\+0).
+\item goal-\/$>$max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Scaling factor for motion acceleration (0.\+0 to 1.\+0).
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. The result is sent back using the action server handle\+:
+\begin{DoxyItemize}
+\item If the move succeeds, {\ttfamily set\+Succeeded()} is called.
+\item If the move fails, {\ttfamily set\+Aborted()} is called with appropriate feedback.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If motion continuously times out or fails, the action is aborted with a failure result. 
+
+No upper bound is placed on retry attempts (could be improved for fault tolerance). 
+\end{DoxyWarning}
+
+
+Definition at line 188 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{188                                                                               \{}
+\DoxyCodeLine{189     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{190     async\_spinner.start();}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{193     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}New Move to: "{}} << goal-\/>state);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     move\_group\_.setPlannerId(\textcolor{stringliteral}{"{}BiTRRT"{}});}
+\DoxyCodeLine{196     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Printing Planner Params"{}});}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198     move\_group\_.setMaxAccelerationScalingFactor(goal-\/>max\_acceleration\_scaling\_factor);}
+\DoxyCodeLine{199     move\_group\_.setMaxVelocityScalingFactor(goal-\/>max\_velocity\_scaling\_factor);}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     go\_to\_joints\_feedback\_.feedback = \textcolor{stringliteral}{"{}Printing Planner Params"{}};}
+\DoxyCodeLine{202     go\_to\_joints\_as\_.publishFeedback(go\_to\_joints\_feedback\_);}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     move\_group\_.setJointValueTarget(goal-\/>state);}
+\DoxyCodeLine{205     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Target Joints set"{}});}
+\DoxyCodeLine{206     go\_to\_joints\_feedback\_.feedback = \textcolor{stringliteral}{"{}Target Joints set"{}};}
+\DoxyCodeLine{207     go\_to\_joints\_as\_.publishFeedback(go\_to\_joints\_feedback\_);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     moveit\_msgs::MoveItErrorCodes ret\_val = move\_group\_.move();}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Return Value"{}}<<ret\_val);}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{keywordflow}{while} (ret\_val.val == moveit\_msgs::MoveItErrorCodes::TIMED\_OUT)}
+\DoxyCodeLine{214     \{}
+\DoxyCodeLine{215         ret\_val = move\_group\_.move();}
+\DoxyCodeLine{216     \}}
+\DoxyCodeLine{217     }
+\DoxyCodeLine{218     last\_joints\_.name = move\_group\_.getJoints();}
+\DoxyCodeLine{219     last\_joints\_.position = move\_group\_.getCurrentJointValues();}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221     go\_to\_joints\_result\_.state = last\_joints\_;}
+\DoxyCodeLine{222     async\_spinner.stop();}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224     \textcolor{keywordflow}{if} (ret\_val.val != moveit\_msgs::MoveItErrorCodes::SUCCESS)}
+\DoxyCodeLine{225     \{}
+\DoxyCodeLine{226         ROS\_ERROR\_STREAM(\textcolor{stringliteral}{"{}Move failed due to ERROR CODE="{}} << ret\_val);}
+\DoxyCodeLine{227         go\_to\_joints\_feedback\_.feedback = \textcolor{stringliteral}{"{}Move failed"{}};}
+\DoxyCodeLine{228         go\_to\_joints\_as\_.publishFeedback(go\_to\_joints\_feedback\_);}
+\DoxyCodeLine{229         go\_to\_joints\_as\_.setAborted(go\_to\_joints\_result\_);}
+\DoxyCodeLine{230         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{231     \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233     go\_to\_joints\_as\_.setSucceeded(go\_to\_joints\_result\_);}
+\DoxyCodeLine{234     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{235     }
+\DoxyCodeLine{236 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_a8b7f56258f537e276dc270fcb53eed28}\label{classFC__Interface_a8b7f56258f537e276dc270fcb53eed28}} 
+\index{FC\_Interface@{FC\_Interface}!goToPoseAsyncCallback@{goToPoseAsyncCallback}}
+\index{goToPoseAsyncCallback@{goToPoseAsyncCallback}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{goToPoseAsyncCallback()}{goToPoseAsyncCallback()}}
+{\footnotesize\ttfamily void FC\+\_\+\+Interface\+::go\+To\+Pose\+Async\+Callback (\begin{DoxyParamCaption}\item[{const fc\+\_\+msgs\+::\+Go\+To\+Pose\+Goal\+Const\+Ptr \&}]{goal }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+go\+\_\+to\+\_\+pose\+\_\+async\textquotesingle{} action server. 
+
+This action moves the robot\textquotesingle{}s end-\/effector to a specified pose using Move\+It! in {\bfseries{asynchronous}} (non-\/blocking) mode. The target pose is provided in the goal, along with optional velocity and acceleration scaling factors, and a selectable trajectory type (e.\+g., joint-\/space or Cartesian).
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & A shared pointer to the action goal containing\+:
+\begin{DoxyItemize}
+\item goal-\/$>$pose\+: The target end-\/effector pose (geometry\+\_\+msgs\+::\+Pose).
+\item goal-\/$>$max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Scaling factor for velocity (range\+: 0.\+0–1.0).
+\item goal-\/$>$max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Scaling factor for acceleration (range\+: 0.\+0–1.0).
+\item goal-\/$>$traj\+\_\+type\+: Integer or enum indicating the desired trajectory type.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. The result is communicated using {\ttfamily set\+Succeeded()} or {\ttfamily set\+Aborted()} via the action server handle. 
+\end{DoxyReturn}
+
+
+Definition at line 262 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{262                                                                                \{}
+\DoxyCodeLine{263         ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{264     async\_spinner.start();}
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{267     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}New Move to: "{}} << goal-\/>pose);}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269     \textcolor{keywordtype}{bool} success = planAndExecutePose\_(goal-\/>pose, goal-\/>max\_velocity\_scaling\_factor, goal-\/>max\_acceleration\_scaling\_factor, goal-\/>traj\_type, \textcolor{keyword}{true});}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     \textcolor{keywordflow}{if} (!success)}
+\DoxyCodeLine{272     \{}
+\DoxyCodeLine{273         go\_to\_pose\_feedback\_.feedback = \textcolor{stringliteral}{"{}Move failed"{}};}
+\DoxyCodeLine{274         go\_to\_pose\_as\_.publishFeedback(go\_to\_pose\_feedback\_);}
+\DoxyCodeLine{275         go\_to\_pose\_as\_.setAborted(go\_to\_pose\_result\_);}
+\DoxyCodeLine{276         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{277     \}}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{279     go\_to\_pose\_result\_.pose = move\_group\_.getCurrentPose().pose;    }
+\DoxyCodeLine{280     ROS\_DEBUG\_STREAM(go\_to\_pose\_result\_.pose);}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282     async\_spinner.stop();}
+\DoxyCodeLine{283     go\_to\_pose\_as\_.setSucceeded(go\_to\_pose\_result\_);}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{286 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_ad53a7b9e850c889f27b77e68d0e37d13}\label{classFC__Interface_ad53a7b9e850c889f27b77e68d0e37d13}} 
+\index{FC\_Interface@{FC\_Interface}!goToPoseCallback@{goToPoseCallback}}
+\index{goToPoseCallback@{goToPoseCallback}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{goToPoseCallback()}{goToPoseCallback()}}
+{\footnotesize\ttfamily void FC\+\_\+\+Interface\+::go\+To\+Pose\+Callback (\begin{DoxyParamCaption}\item[{const fc\+\_\+msgs\+::\+Go\+To\+Pose\+Goal\+Const\+Ptr \&}]{goal }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+go\+\_\+to\+\_\+pose\textquotesingle{} action server. 
+
+This action moves the robot\textquotesingle{}s end-\/effector to a specified pose using Move\+It!. The pose execution can be configured with velocity and acceleration scaling factors, and a selectable trajectory type (e.\+g., joint-\/space or Cartesian).
+
+
+\begin{DoxyParams}{Parameters}
+{\em goal} & A shared pointer to the action goal containing\+:
+\begin{DoxyItemize}
+\item goal-\/$>$pose\+: The target end-\/effector pose (geometry\+\_\+msgs\+::\+Pose).
+\item goal-\/$>$max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Scaling factor for velocity (range\+: 0.\+0–1.0).
+\item goal-\/$>$max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Scaling factor for acceleration (range\+: 0.\+0–1.0).
+\item goal-\/$>$traj\+\_\+type\+: Integer or enum indicating the desired trajectory type.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. The result is communicated via {\ttfamily set\+Succeeded()} or {\ttfamily set\+Aborted()} on the action server. 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{237                                                                           \{}
+\DoxyCodeLine{238     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{239     async\_spinner.start();}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{242     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}New Move to: "{}} << goal-\/>pose);}
+\DoxyCodeLine{243 }
+\DoxyCodeLine{244     \textcolor{keywordtype}{bool} success = planAndExecutePose\_(goal-\/>pose, goal-\/>max\_velocity\_scaling\_factor, goal-\/>max\_acceleration\_scaling\_factor, goal-\/>traj\_type, \textcolor{keyword}{false});}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{keywordflow}{if} (!success)}
+\DoxyCodeLine{247     \{}
+\DoxyCodeLine{248         go\_to\_pose\_feedback\_.feedback = \textcolor{stringliteral}{"{}Move failed"{}};}
+\DoxyCodeLine{249         go\_to\_pose\_as\_.publishFeedback(go\_to\_pose\_feedback\_);}
+\DoxyCodeLine{250         go\_to\_pose\_as\_.setAborted(go\_to\_pose\_result\_);}
+\DoxyCodeLine{251         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{252     \}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254     go\_to\_pose\_result\_.pose = move\_group\_.getCurrentPose().pose;    }
+\DoxyCodeLine{255     ROS\_DEBUG\_STREAM(go\_to\_pose\_result\_.pose);}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     async\_spinner.stop();}
+\DoxyCodeLine{258     go\_to\_pose\_as\_.setSucceeded(go\_to\_pose\_result\_);}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{261 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_a3ef243f0c04054e36d6ef15116e97f82}\label{classFC__Interface_a3ef243f0c04054e36d6ef15116e97f82}} 
+\index{FC\_Interface@{FC\_Interface}!jointStatesCallback@{jointStatesCallback}}
+\index{jointStatesCallback@{jointStatesCallback}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{jointStatesCallback()}{jointStatesCallback()}}
+{\footnotesize\ttfamily void FC\+\_\+\+Interface\+::joint\+States\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Joint\+State\+::\+Const\+Ptr \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}/joint\+\_\+states\textquotesingle{} topic. 
+
+This function processes incoming joint state messages, computes the corresponding end-\/effector pose using forward kinematics, and publishes the result as a {\ttfamily geometry\+\_\+msgs\+::\+Pose\+Stamped} message.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & A shared pointer to the incoming sensor\+\_\+msgs\+::\+Joint\+State message containing joint positions.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Converts the joint positions into an Eigen vector {\ttfamily q}.
+\item Calls {\ttfamily \+\_\+\+FK()} to compute the transformation matrix from the base frame to the tool0 (end-\/effector).
+\item Extracts the translation and rotation (as quaternion) from the 4x4 pose matrix.
+\item Publishes the computed pose on {\ttfamily tool0\+\_\+pose\+\_\+pub\+\_\+} as a {\ttfamily Pose\+Stamped} message.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+
+\begin{DoxyItemize}
+\item The base frame is assumed to be {\ttfamily \char`\"{}base\char`\"{}} (set as {\ttfamily frame\+\_\+id}).
+\item Orientation is extracted from the 3x3 rotation block of the transformation matrix.
+\item {\ttfamily \+\_\+\+FK()} is expected to implement the forward kinematics logic using the provided DH parameters. 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line 356 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{356                                                                               \{}
+\DoxyCodeLine{357     \textcolor{comment}{// READ JOINT STATES}}
+\DoxyCodeLine{358     VectorJd q(msg-\/>position.size());}
+\DoxyCodeLine{359     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<msg-\/>position.size(); i++)}
+\DoxyCodeLine{360     \{}
+\DoxyCodeLine{361         q(i) = msg-\/>position[i];}
+\DoxyCodeLine{362     \}}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364     \textcolor{comment}{// COMPUTE FORWARD KINEMATICS}}
+\DoxyCodeLine{365     Eigen::Matrix4d tool0\_pose = \_FK(q, robot\_DH\_, robot\_base\_frame\_, \textcolor{keyword}{true});}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367     \textcolor{comment}{// PUBLISH TOOL0 POSE}}
+\DoxyCodeLine{368     geometry\_msgs::PoseStamped tool0\_pose\_msg;}
+\DoxyCodeLine{369     tool0\_pose\_msg.header.stamp = ros::Time::now();}
+\DoxyCodeLine{370     tool0\_pose\_msg.header.frame\_id = \textcolor{stringliteral}{"{}base"{}};}
+\DoxyCodeLine{371     tool0\_pose\_msg.pose.position.x = tool0\_pose(0, 3);}
+\DoxyCodeLine{372     tool0\_pose\_msg.pose.position.y = tool0\_pose(1, 3);}
+\DoxyCodeLine{373     tool0\_pose\_msg.pose.position.z = tool0\_pose(2, 3);}
+\DoxyCodeLine{374     Eigen::Quaterniond q\_(tool0\_pose.block<3, 3>(0, 0));}
+\DoxyCodeLine{375     tool0\_pose\_msg.pose.orientation.x = q\_.x();}
+\DoxyCodeLine{376     tool0\_pose\_msg.pose.orientation.y = q\_.y();}
+\DoxyCodeLine{377     tool0\_pose\_msg.pose.orientation.z = q\_.z();}
+\DoxyCodeLine{378     tool0\_pose\_msg.pose.orientation.w = q\_.w();}
+\DoxyCodeLine{379     }
+\DoxyCodeLine{380     tool0\_pose\_pub\_.publish(tool0\_pose\_msg);}
+\DoxyCodeLine{381 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_a9aad6d309b2387f0467fdb809e6d9650}\label{classFC__Interface_a9aad6d309b2387f0467fdb809e6d9650}} 
+\index{FC\_Interface@{FC\_Interface}!setJoints@{setJoints}}
+\index{setJoints@{setJoints}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{setJoints()}{setJoints()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::set\+Joints (\begin{DoxyParamCaption}\item[{fc\+\_\+msgs\+::\+Set\+Joints\+::\+Request \&}]{req,  }\item[{fc\+\_\+msgs\+::\+Set\+Joints\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+set\+\_\+joints\textquotesingle{} ROS service. 
+
+This service sets a target joint configuration for the manipulator and attempts to move to it using the specified planner (in this case, Bi\+TRRT). It also includes retry logic in case the motion times out.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request containing\+:
+\begin{DoxyItemize}
+\item req.\+state\+: The desired joint positions (sensor\+\_\+msgs\+::\+Joint\+State).
+\end{DoxyItemize}\\
+\hline
+{\em res} & Service response containing\+:
+\begin{DoxyItemize}
+\item res.\+state\+: The actual joint positions after motion execution.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the motion was successfully planned and executed, false otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The planner used is explicitly set to \char`\"{}\+Bi\+TRRT\char`\"{}. The motion is retried up to {\ttfamily max\+\_\+retries} times if the initial execution times out. The joint names and current joint values are stored in {\ttfamily last\+\_\+joints\+\_\+} for future reference. 
+\end{DoxyNote}
+
+
+Definition at line 80 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{80                                                                                        \{}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{83     async\_spinner.start();}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{86     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}New Move to: "{}} << req.state);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     move\_group\_.setPlannerId(\textcolor{stringliteral}{"{}BiTRRT"{}});}
+\DoxyCodeLine{89     move\_group\_.setJointValueTarget(req.state);}
+\DoxyCodeLine{90     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Target Joints set"{}});}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     moveit\_msgs::MoveItErrorCodes ret\_val = move\_group\_.move();}
+\DoxyCodeLine{93     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Return Value"{}} << ret\_val);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     try\_count\_ = 0; }
+\DoxyCodeLine{96     \textcolor{keywordflow}{while} (ret\_val.val == moveit\_msgs::MoveItErrorCodes::TIMED\_OUT \&\& try\_count\_ < max\_retries\_)\{}
+\DoxyCodeLine{97         try\_count\_++;}
+\DoxyCodeLine{98         ret\_val = move\_group\_.move(); }
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101     last\_joints\_.name = move\_group\_.getJoints();}
+\DoxyCodeLine{102     last\_joints\_.position = move\_group\_.getCurrentJointValues();}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104     res.state = last\_joints\_;}
+\DoxyCodeLine{105     async\_spinner.stop();}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (ret\_val.val != moveit\_msgs::MoveItErrorCodes::SUCCESS)}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109         ROS\_ERROR\_STREAM(\textcolor{stringliteral}{"{}Move failed due to ERROR CODE="{}} << ret\_val);}
+\DoxyCodeLine{110         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112     ROS\_DEBUG\_STREAM( \textcolor{stringliteral}{"{}Move succeeded."{}});}
+\DoxyCodeLine{113     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_af7ba1c6a58a67b145a7489c91b50224d}\label{classFC__Interface_af7ba1c6a58a67b145a7489c91b50224d}} 
+\index{FC\_Interface@{FC\_Interface}!setPose@{setPose}}
+\index{setPose@{setPose}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{setPose()}{setPose()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::set\+Pose (\begin{DoxyParamCaption}\item[{fc\+\_\+msgs\+::\+Set\+Pose\+::\+Request \&}]{req,  }\item[{fc\+\_\+msgs\+::\+Set\+Pose\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+set\+\_\+pose\textquotesingle{} ROS service. 
+
+This service receives a target end-\/effector pose and attempts to move the robot to that pose using Move\+It!. The pose can be executed with optional velocity and acceleration scaling, and a specified trajectory type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Service request containing\+:
+\begin{DoxyItemize}
+\item req.\+pose\+: Target pose to move the end-\/effector to (geometry\+\_\+msgs\+::\+Pose).
+\item OPTIONAL req.\+max\+\_\+velocity\+\_\+scaling\+\_\+factor\+: Optional scaling for velocity (range\+: 0.\+0–1.0).
+\item OPTIONAL req.\+max\+\_\+acceleration\+\_\+scaling\+\_\+factor\+: Optional scaling for acceleration (range\+: 0.\+0–1.0).
+\item OPTIONAL req.\+traj\+\_\+type\+: Type of trajectory to execute (e.\+g., Cartesian or joint-\/space).
+\end{DoxyItemize}\\
+\hline
+{\em res} & Service response containing\+:
+\begin{DoxyItemize}
+\item res.\+pose\+: Actual end-\/effector pose after execution.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the motion was successfully planned and executed, false otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function uses an Async\+Spinner to ensure ROS callbacks remain active during blocking operations. 
+\end{DoxyNote}
+
+
+Definition at line 62 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{62                                                                                  \{}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{65     async\_spinner.start();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     }
+\DoxyCodeLine{68     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}Let's Move!!"{}});}
+\DoxyCodeLine{69     ROS\_DEBUG\_STREAM(\textcolor{stringliteral}{"{}New Move to: "{}} << req.pose);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} success = planAndExecutePose\_(req.pose, req.max\_velocity\_scaling\_factor, req.max\_acceleration\_scaling\_factor, req.traj\_type);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     res.pose = move\_group\_.getCurrentPose().pose;}
+\DoxyCodeLine{74     ROS\_DEBUG\_STREAM(res.pose);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     async\_spinner.stop();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} success;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classFC__Interface_aca700d220402724738cb804d10dedaad}\label{classFC__Interface_aca700d220402724738cb804d10dedaad}} 
+\index{FC\_Interface@{FC\_Interface}!stopTrajectory@{stopTrajectory}}
+\index{stopTrajectory@{stopTrajectory}!FC\_Interface@{FC\_Interface}}
+\doxysubsubsection{\texorpdfstring{stopTrajectory()}{stopTrajectory()}}
+{\footnotesize\ttfamily bool FC\+\_\+\+Interface\+::stop\+Trajectory (\begin{DoxyParamCaption}\item[{std\+\_\+srvs\+::\+Trigger\+::\+Request \&}]{req,  }\item[{std\+\_\+srvs\+::\+Trigger\+::\+Response \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Callback function for the \textquotesingle{}fc\+\_\+stop\+\_\+trajectory\textquotesingle{} ROS service. 
+
+This service stops any currently executing trajectory using Move\+It!\textquotesingle{}s Move\+Group interface. It is useful for emergency stops or manual interruption of motion execution.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & Empty standard Trigger service request. \\
+\hline
+{\em res} & Standard Trigger service response containing\+:
+\begin{DoxyItemize}
+\item res.\+success\+: Always set to true if {\ttfamily move\+\_\+group\+\_\+.\+stop()} was called.
+\item res.\+message\+: Informative string indicating the trajectory was stopped.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true indicating the service call was processed successfully.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses an Async\+Spinner to ensure the ROS callback queue remains active during execution. 
+\end{DoxyNote}
+
+
+Definition at line 138 of file fc\+\_\+interface.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{138                                                                                           \{}
+\DoxyCodeLine{139     }
+\DoxyCodeLine{140     ros::AsyncSpinner async\_spinner(1);}
+\DoxyCodeLine{141     async\_spinner.start();}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143     move\_group\_.stop();}
+\DoxyCodeLine{144     res.success = \textcolor{keyword}{true};}
+\DoxyCodeLine{145     res.message = \textcolor{stringliteral}{"{}Trajectory stopped"{}};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     async\_spinner.stop();}
+\DoxyCodeLine{148     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{149 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/fc\+\_\+interface.\+h\item 
+src/fc\+\_\+interface.\+cpp\end{DoxyCompactItemize}

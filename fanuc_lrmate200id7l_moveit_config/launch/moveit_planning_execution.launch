@@ -25,7 +25,6 @@
     <!-- load the robot_description parameter before launching ROS-I nodes -->
     <include file="$(find fanuc_lrmate200id7l_moveit_config)/launch/planning_context.launch" >
       <arg name="load_robot_description" value="true" />
-      <!-- <arg name="namespace" value="$(arg namespace)" /> -->
     </include>
 
   
@@ -53,7 +52,6 @@
 
     <include file="$(find fanuc_lrmate200id7l_moveit_config)/launch/moveit_rviz.launch" >
       <arg name="config" value="true"/>
-      <!-- <arg name="namespace" value="$(arg namespace)" /> -->
     </include>
 
     <!-- If database loading was enabled, start mongodb as well -->
