@@ -7,8 +7,8 @@
     <group ns="$(arg namespace)">
         <param name="tf_prefix" value="$(arg namespace)" />
 
-        <!-- Dummy IP -->
-        <arg name ="fc_ip" value="192.168.99.99" />
+        <!-- Robot IP -->
+        <arg name ="fc_ip" value="192.168.2.151" />
 
         <!-- Launch fc_interface Node -->
         <node name="fc_interface" pkg="fc_tasks" type="fc_tasks" output="screen" >
