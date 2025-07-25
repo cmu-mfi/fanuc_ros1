@@ -107,7 +107,7 @@ ENV LANG=C.UTF-8 \
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
-# 🧠 Create and build your workspace (preserved from your original setup)
+# Create and build your workspace (preserved from your original setup)
 RUN mkdir -p /root/ros1_ws/src
 
 # COPY your full workspace (optional: uncomment if not using volume mount)
