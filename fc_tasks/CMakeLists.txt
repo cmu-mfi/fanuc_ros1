@@ -36,6 +36,7 @@ catkin_package(
      moveit_msgs
      std_msgs
      actionlib_msgs
+     rospy
 )
 
 ###########
@@ -62,6 +63,13 @@ target_link_libraries(fc_tasks
   Eigen3::Eigen
   jsoncpp
 )
-# target_link_libraries(service_sample_node
-#   ${catkin_LIBRARIES}
-# )
+
+install(DIRECTORY src/fc_tasks/
+  DESTINATION ${CATKIN_PACKAGE_PYTHON_DESTINATION}
+  PATTERN "*.py"
+)
+
+install(PROGRAMS
+  src/fc_tasks/IOStates.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

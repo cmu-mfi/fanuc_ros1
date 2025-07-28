@@ -30,7 +30,17 @@ add_service_files(
   SetPose.srv
   SetJoints.srv
   ExecuteCartesianTrajectory.srv
+  ReadIO.srv
+  SetIO.srv
 )
+
+## Add messages
+add_message_files(
+  FILES
+  IOState.msg
+  IOStateArray.msg
+)
+
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(

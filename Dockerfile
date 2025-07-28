@@ -83,7 +83,10 @@ RUN apt-get update && apt-get install -y \
     ros-noetic-joy \
     ros-noetic-joy-teleop \
     && rm -rf /var/lib/apt/lists/*
-RUN pip install ruckig
+RUN pip install ruckig 
+RUN pip install -U pip
+RUN pip install -U wheel setuptools
+RUN pip install https://github.com/gavanderhoorn/comet_rpc/archive/0.2.4.tar.gz
 #More 
 
 # Enable universe repo and fix sources

@@ -32,6 +32,8 @@
   <depend>tf</depend>
   <depend>std_msgs</depend>
   <depend>actionlib_msgs</depend>
+  <depend>comet_rpc</depend>
+  <depend>rospy</depend>
 
   <export>
     <!-- Other tools can request additional information be placed here -->
