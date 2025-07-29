@@ -83,7 +83,10 @@ RUN apt-get update && apt-get install -y \
     ros-noetic-joy \
     ros-noetic-joy-teleop \
     && rm -rf /var/lib/apt/lists/*
-RUN pip install ruckig
+RUN pip install ruckig 
+RUN pip install -U pip
+RUN pip install -U wheel setuptools
+RUN pip install https://github.com/gavanderhoorn/comet_rpc/archive/0.2.4.tar.gz
 #More 
 
 # Enable universe repo and fix sources
@@ -107,7 +110,7 @@ ENV LANG=C.UTF-8 \
 
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 
-# 🧠 Create and build your workspace (preserved from your original setup)
+# Create and build your workspace (preserved from your original setup)
 RUN mkdir -p /root/ros1_ws/src
 
 # COPY your full workspace (optional: uncomment if not using volume mount)
