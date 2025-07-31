@@ -13,8 +13,8 @@ FC_Interface::FC_Interface(std::string group_name, ros::NodeHandle &nh_)
 	ROS_INFO_STREAM("End Effector.." << move_group_.getEndEffector());
 	ROS_INFO_STREAM("End Effector Link.." << move_group_.getEndEffectorLink());
 
-	max_velocity_scaling_factor_ = 0.1;
-	max_acceleration_scaling_factor_ = 0.1;
+	max_velocity_scaling_factor_ = 0.00001;
+	max_acceleration_scaling_factor_ = 0.00001;
 	move_group_.setMaxAccelerationScalingFactor(max_acceleration_scaling_factor_);
 	move_group_.setMaxVelocityScalingFactor(max_velocity_scaling_factor_);
 
@@ -367,7 +367,7 @@ void FC_Interface::jointStatesCallback(const sensor_msgs::JointState::ConstPtr& 
 	// PUBLISH TOOL0 POSE
 	geometry_msgs::PoseStamped tool0_pose_msg;
 	tool0_pose_msg.header.stamp = ros::Time::now();
-	tool0_pose_msg.header.frame_id = "base";
+	tool0_pose_msg.header.frame_id = "/real/base_link";
 	tool0_pose_msg.pose.position.x = tool0_pose(0, 3);
 	tool0_pose_msg.pose.position.y = tool0_pose(1, 3);
 	tool0_pose_msg.pose.position.z = tool0_pose(2, 3);
@@ -461,7 +461,7 @@ bool FC_Interface::planAndExecuteCartesianPath_(const std::vector<geometry_msgs:
 	moveit_msgs::MotionSequenceResponse ms_res;
 
 	mp_req_base.pipeline_id = "pilz_industrial_motion_planner";
-	mp_req_base.planner_id = planner_id;
+	mp_req_base.planner_id = planner_id.compare("PTP") == 0 ? "PTP" : "LIN";
 	mp_req_base.group_name = "manipulator";
 	mp_req_base.num_planning_attempts = 5;
 	mp_req_base.max_velocity_scaling_factor = max_velocity_scaling_factor == 0.0 ? 0.3 : max_velocity_scaling_factor;

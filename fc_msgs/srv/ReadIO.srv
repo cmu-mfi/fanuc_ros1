@@ -1,0 +1,5 @@
+string io_type
+int32 index
+---
+int32 value
+string comment
