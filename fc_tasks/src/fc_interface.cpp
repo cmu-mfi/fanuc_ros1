@@ -573,12 +573,12 @@ bool FC_Interface::planAndExecutePose_(const geometry_msgs::Pose &pose,
 	mp_req.pipeline_id = "pilz_industrial_motion_planner";
 	mp_req.planner_id = planner_id.compare("PTP") == 0 ? "PTP" : "LIN";
 	mp_req.group_name = "manipulator";
-	mp_req.num_planning_attempts = 5;
+	mp_req.num_planning_attempts = 1;
 	mp_req.max_velocity_scaling_factor = max_velocity_scaling_factor == 0.0 ? 0.3 : max_velocity_scaling_factor;
 	mp_req.max_acceleration_scaling_factor = max_acceleration_scaling_factor == 0.0 ? 0.3 : max_acceleration_scaling_factor;
 
-	float pos_tolerance = 0.001;
-	float orient_tolerance = 0.01;
+	float pos_tolerance = 0.05;
+	float orient_tolerance = 0.05;
 	geometry_msgs::PoseStamped target_pose_stamped;
 	target_pose_stamped.header.frame_id = "";
 	target_pose_stamped.pose = pose;
@@ -593,32 +593,30 @@ bool FC_Interface::planAndExecutePose_(const geometry_msgs::Pose &pose,
 	moveit_msgs::MoveItErrorCodes ret_val;
 	ret_val.val = moveit_msgs::MoveItErrorCodes::TIMED_OUT;
 
-	while (ret_val.val == moveit_msgs::MoveItErrorCodes::TIMED_OUT)
+	if (plan_kinematics_path_client.call(srv))
 	{
-		if (plan_kinematics_path_client.call(srv))
+		mp_res = srv.response.motion_plan_response;
+		if (mp_res.error_code.val != moveit_msgs::MoveItErrorCodes::SUCCESS)
 		{
-			mp_res = srv.response.motion_plan_response;
-			if (mp_res.error_code.val != moveit_msgs::MoveItErrorCodes::SUCCESS)
-			{
-				ROS_ERROR_STREAM("Planning failed due to ERROR CODE = " << mp_res.error_code.val);
-				ret_val.val = mp_res.error_code.val;
-			}
-			else
-			{
-				ROS_DEBUG_STREAM("Planning successful");
-				moveit::planning_interface::MoveGroupInterface::Plan plan;
-				plan.trajectory_ = mp_res.trajectory;
-				if (async)
-					ret_val = move_group_.asyncExecute(plan);
-				else
-					ret_val = move_group_.execute(plan);
-			}
+			ROS_ERROR_STREAM("Planning failed due to ERROR CODE = " << mp_res.error_code.val);
+			ret_val.val = mp_res.error_code.val;
 		}
 		else
 		{
-			ROS_ERROR("Failed to call service plan_kinematics_path");
-			return false;
+			ROS_DEBUG_STREAM("Planning successful");
+			moveit::planning_interface::MoveGroupInterface::Plan plan;
+			plan.trajectory_ = mp_res.trajectory;
+			if (async)
+				ret_val = move_group_.asyncExecute(plan);
+			else
+				ret_val = move_group_.execute(plan);
 		}
 	}
+	else
+	{
+		ROS_ERROR("Failed to call service plan_kinematics_path");
+		return false;
+	}
+	
 	return true;
 }

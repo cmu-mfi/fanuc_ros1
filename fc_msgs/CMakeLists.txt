@@ -18,7 +18,6 @@ add_action_files(
   DIRECTORY action
   FILES 
   ExecuteCartesianTrajectory.action
-  ExecuteCartesianTrajectoryFT.action
   GoToJoints.action
   GoToPose.action
 )
@@ -29,7 +28,6 @@ add_service_files(
   GetPose.srv
   GetPoseStamped.srv
   SetPose.srv
-  SetPoseFT.srv
   SetJoints.srv
   ExecuteCartesianTrajectory.srv
 )
