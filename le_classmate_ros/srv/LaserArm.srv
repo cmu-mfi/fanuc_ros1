@@ -1,5 +1,0 @@
-#request
-bool Laser
----
-#response
-bool State
