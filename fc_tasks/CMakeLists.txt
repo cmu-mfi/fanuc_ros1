@@ -73,3 +73,4 @@ install(PROGRAMS
   src/fc_tasks/IOStates.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+execute_process(COMMAND chmod +x ${CMAKE_SOURCE_DIR}/src/fc_tasks/IOStates.py)

@@ -6,7 +6,7 @@
     <arg name="io_control" default="true"   doc="flag for whether or not to launch io_control"/>
 
     <group ns="$(arg namespace)">
-        <param name="tf_prefix" value="$(arg namespace)" />
+        <!-- <param name="tf_prefix" value="$(arg namespace)" /> -->
 
         <!-- Robot IP -->
         <arg name ="fc_ip" value="192.168.2.151" />

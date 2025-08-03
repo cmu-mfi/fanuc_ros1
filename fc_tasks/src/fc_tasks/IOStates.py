@@ -40,11 +40,13 @@ class Fanuc_IO():
         '''
 
         self.server_ip = rospy.get_param('~server', '192.168.2.151')
+        self.namespace = rospy.get_param('~namespace', '/')
+
         rospy.init_node('fc_io_node')
-        self.publisher_dout = rospy.Publisher('/io_states_DOUT', IOStateArray, queue_size=10)
-        self.publisher_din = rospy.Publisher('/io_states_DIN', IOStateArray, queue_size=10)
-        self.publisher_aout = rospy.Publisher('/io_states_AOUT', IOStateArray, queue_size=10)
-        self.publisher_ain = rospy.Publisher('/io_states_AIN', IOStateArray, queue_size=10)
+        self.publisher_dout = rospy.Publisher(self.namespace + '/io_states_DOUT', IOStateArray, queue_size=10)
+        self.publisher_din = rospy.Publisher(self.namespace + '/io_states_DIN', IOStateArray, queue_size=10)
+        self.publisher_aout = rospy.Publisher(self.namespace + '/io_states_AOUT', IOStateArray, queue_size=10)
+        self.publisher_ain = rospy.Publisher(self.namespace + '/io_states_AIN', IOStateArray, queue_size=10)
 
         # Services 
         rospy.Service('set_io_value', SetIO, self.setIOval_srv)
