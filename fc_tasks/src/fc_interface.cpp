@@ -461,7 +461,7 @@ bool FC_Interface::planAndExecuteCartesianPath_(const std::vector<geometry_msgs:
 	moveit_msgs::MotionSequenceResponse ms_res;
 
 	mp_req_base.pipeline_id = "pilz_industrial_motion_planner";
-	mp_req_base.planner_id = planner_id.compare("PTP") == 0 ? "PTP" : "LIN";
+	mp_req_base.planner_id = planner_id.compare("LIN") == 0 ? "LIN" : "PTP";
 	mp_req_base.group_name = "manipulator";
 	mp_req_base.num_planning_attempts = 5;
 	mp_req_base.max_velocity_scaling_factor = max_velocity_scaling_factor == 0.0 ? 0.3 : max_velocity_scaling_factor;

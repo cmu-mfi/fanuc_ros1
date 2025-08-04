@@ -203,22 +203,25 @@ class Fanuc_IO():
         while not rospy.is_shutdown():
 
             # Digital Outputs
-            dout_array = self.generate_iostate_array(rpc.IoType.DigitalOut, 72)
+            # dout_array = self.generate_iostate_array(rpc.IoType.DigitalOut, 72)
+            dout_array = []
             self.publisher_dout.publish(dout_array)
 
             # Digital Inputs
-            din_array = self.generate_iostate_array(rpc.IoType.DigitalIn, 72)
+            # din_array = self.generate_iostate_array(rpc.IoType.DigitalIn, 72)
+            din_array = []
             self.publisher_din.publish(din_array)
 
             # Analog Outputs
-            aout_array = self.generate_iostate_array(rpc.IoType.AnalogOut, 6)
+            # aout_array = self.generate_iostate_array(rpc.IoType.AnalogOut, 6)
+            aout_array = []
             self.publisher_aout.publish(aout_array)
 
             # Analog Inputs
             ain_array = self.generate_iostate_array(rpc.IoType.AnalogIn, 5)
             self.publisher_ain.publish(ain_array)
 
-            rospy.loginfo("Published IO states to topics.") # To track time taken to publish IO states
+            # rospy.loginfo("Published IO states to topics.") # To track time taken to publish IO states
             self.rate.sleep()
 
 if __name__ == '__main__':
