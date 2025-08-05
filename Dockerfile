@@ -86,7 +86,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install ruckig 
 RUN pip install -U pip
 RUN pip install -U wheel setuptools
-# RUN pip install https://github.com/gavanderhoorn/comet_rpc/archive/0.2.4.tar.gz
+RUN pip install https://github.com/gavanderhoorn/comet_rpc/archive/0.2.4.tar.gz
 #More 
 
 # Enable universe repo and fix sources

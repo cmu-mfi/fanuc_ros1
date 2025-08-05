@@ -37,6 +37,7 @@ catkin_package(
      std_msgs
      actionlib_msgs
      rospy
+     rospy
 )
 
 ###########
