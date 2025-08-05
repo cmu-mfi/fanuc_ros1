@@ -1,11 +1,12 @@
 <launch>
 
     <!-- Launch file arguments -->
-    <arg name="namespace" default="/" />
-    <arg name="sim" default="true" />
+    <arg name="namespace" default="/"       doc="namespace to launch all related nodes"/>
+    <arg name="sim" default="true"          doc="flag for whether or not to launch in simulation"/>
+    <arg name="io_control" default="true"   doc="flag for whether or not to launch io_control"/>
 
     <group ns="$(arg namespace)">
-        <param name="tf_prefix" value="$(arg namespace)" />
+        <!-- <param name="tf_prefix" value="$(arg namespace)" /> -->
 
         <!-- Robot IP -->
         <arg name ="fc_ip" value="192.168.2.151" />
@@ -14,7 +15,6 @@
         <node name="fc_interface" pkg="fc_tasks" type="fc_tasks" output="screen" >
             <param name="group_name" type="str" value="manipulator"/>
         </node>
-        <!-- launch-prefix="gdb -ex run -/-args" -->
         
         <!-- Launch MoveIt -->
         <include file="$(find fanuc_lrmate200id7l_moveit_config)/launch/moveit_planning_execution.launch" >
@@ -22,6 +22,14 @@
 			<arg name="sim" value="false" unless="$(arg sim)"/>
             <arg name="namespace" value="$(arg namespace)"/>
         </include>
+
+        <!-- Launch IO States -->
+        <include file="$(find fc_launch)/launch/io.launch" if ="$(arg io_control)">
+            <arg name="namespace" value="$(arg namespace)"/>
+            <arg name="server" value="$(arg fc_ip)"/>
+        </include>
+
+
     </group>
 
 </launch> 

@@ -2,11 +2,12 @@
 #include <string.h>
 #include <fc_interface.h>
 
-int main(int argc, char *argv[]){
+int main(int argc, char *argv[])
+{
 
-    ros::init(argc, argv, "fc_interface");
+	ros::init(argc, argv, "fc_interface");
 
-	ros::AsyncSpinner async_spinner(1);
+	ros::AsyncSpinner async_spinner(2);
 	async_spinner.start();
 
 	ROS_INFO("fc_interface node starting");

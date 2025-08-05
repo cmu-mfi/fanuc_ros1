@@ -40,12 +40,20 @@ class Fanuc_IO():
         '''
 
         self.server_ip = rospy.get_param('~server', '192.168.2.151')
+        self.namespace = rospy.get_param('~namespace', '/')
+
         rospy.init_node('fc_io_node')
-        self.publisher_dout = rospy.Publisher('/io_states_DOUT', IOStateArray, queue_size=10)
-        self.publisher_din = rospy.Publisher('/io_states_DIN', IOStateArray, queue_size=10)
-        self.publisher_aout = rospy.Publisher('/io_states_AOUT', IOStateArray, queue_size=10)
-        self.publisher_ain = rospy.Publisher('/io_states_AIN', IOStateArray, queue_size=10)
-        self.rate = rospy.Rate(50)
+        self.publisher_dout = rospy.Publisher(self.namespace + '/io_states_DOUT', IOStateArray, queue_size=10)
+        self.publisher_din = rospy.Publisher(self.namespace + '/io_states_DIN', IOStateArray, queue_size=10)
+        self.publisher_aout = rospy.Publisher(self.namespace + '/io_states_AOUT', IOStateArray, queue_size=10)
+        self.publisher_ain = rospy.Publisher(self.namespace + '/io_states_AIN', IOStateArray, queue_size=10)
+
+        # Services 
+        rospy.Service('set_io_value', SetIO, self.setIOval_srv)
+        rospy.Service('read_io_value', ReadIO, self.readIOval_srv)
+        self.rate = rospy.Rate(10)
+
+        self.indexes_with_comments = {}
     
     def checkComment(self, IOType:rpc.IoType, index:int):
 
@@ -57,7 +65,7 @@ class Fanuc_IO():
         '''
 
         comment = rpc.iogetpn(server=self.server_ip, typ=IOType, index=index)
-        return comment.value != ''
+        return comment != ''
     
     def generate_iostate_array(self, IOType:rpc.IoType, max_list:int):
         
@@ -67,20 +75,46 @@ class Fanuc_IO():
         @param max_list Maximum number of IO points to check.
         @return IOStateArray containing active IO points with comments.
         '''
+        if IOType not in self.indexes_with_comments:
+            # First run for this IOType, build the cache
+            indexes_with_comments = set()
+            for i in range(1, max_list):
+                if self.checkComment(IOType, i):
+                    indexes_with_comments.add(i)
+            self.indexes_with_comments[IOType] = indexes_with_comments
+
 
         io_array = IOStateArray()
         io_array.states = []
 
-        for i in range(max_list):
+        for i in self.indexes_with_comments[IOType]:
             if self.checkComment(IOType, i):
                 state = IOState()
                 state.index = i
-                state.value = rpc.iovalrd(server = self.server_ip, typ = IOType, index = i)
-                state.comment = rpc.iogetpn(server = self.server_ip, typ = IOType, index = i)  
+                state.value = float(rpc.iovalrd(server = self.server_ip, typ = IOType, index = i).value)
+                state.comment = str(rpc.iogetpn(server = self.server_ip, typ = IOType, index = i))  
                 io_array.states.append(state)
-        
+
         return io_array
     
+    def refresh_cache_for_type(self, IOType, max_list):
+
+        '''
+        @brief Refresh the cache of indexes with comments for a specific IO type.
+        @param IOType IO type to refresh (DigitalIn, DigitalOut, AnalogIn, AnalogOut).
+        @param max_list Maximum number of IO points to check.
+        @details This method checks all indexes for the given IO type and updates the cache
+        of indexes that have comments. This is useful if the IO configuration has changed.
+        @note This method should be called if the IO configuration is expected to change dynamically.
+        @note It is not called automatically, so it should be invoked explicitly when needed.
+        '''
+
+        indexes_with_comments = set()
+        for i in range(1, max_list):
+            if self.checkComment(IOType, i):
+                indexes_with_comments.add(i)
+        self.indexes_with_comments[IOType] = indexes_with_comments
+
     def setIOvalue(self, IO_Type, index:int, value:int):
 
         '''
@@ -163,30 +197,31 @@ class Fanuc_IO():
         '''
         @brief Main execution loop. Advertises ROS IO services and publishes IO states.
         @details Publishes to /io_states_DOUT, /io_states_DIN, /io_states_AOUT, /io_states_AIN.
+        @note If all publishers are active, the node publishes IO states every ~14 seconds.
         '''
         rospy.loginfo("Starting Fanuc IO Node...")
         while not rospy.is_shutdown():
 
-            # Services 
-            rospy.Service('set_io_value', SetIO, self.setIOval_srv)
-            rospy.Service('read_io_value', ReadIO, self.readIOval_srv)
-
             # Digital Outputs
-            dout_array = self.generate_iostate_array(rpc.IoType.DigitalOut, 100)
+            # dout_array = self.generate_iostate_array(rpc.IoType.DigitalOut, 72)
+            dout_array = []
             self.publisher_dout.publish(dout_array)
 
             # Digital Inputs
-            din_array = self.generate_iostate_array(rpc.IoType.DigitalIn, 100)
+            # din_array = self.generate_iostate_array(rpc.IoType.DigitalIn, 72)
+            din_array = []
             self.publisher_din.publish(din_array)
 
             # Analog Outputs
-            aout_array = self.generate_iostate_array(rpc.IoType.AnalogOut, 16)
+            # aout_array = self.generate_iostate_array(rpc.IoType.AnalogOut, 6)
+            aout_array = []
             self.publisher_aout.publish(aout_array)
 
             # Analog Inputs
-            ain_array = self.generate_iostate_array(rpc.IoType.AnalogIn, 16)
+            ain_array = self.generate_iostate_array(rpc.IoType.AnalogIn, 5)
             self.publisher_ain.publish(ain_array)
 
+            # rospy.loginfo("Published IO states to topics.") # To track time taken to publish IO states
             self.rate.sleep()
 
 if __name__ == '__main__':

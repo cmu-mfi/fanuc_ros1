@@ -2,9 +2,8 @@
     <arg name="namespace" default="/" />
     <arg name="server" default='192.168.2.151'/>
 
-    <group ns="$(arg namespace)">
         <node name="Fanuc_IO" pkg="fc_tasks" type="IOStates.py" output="screen">
             <param name="server" value="$(arg server)" />
+            <param name="namespace" value="$(arg namespace)" />
         </node>
-    </group>
 </launch>
